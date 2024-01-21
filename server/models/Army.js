@@ -4,10 +4,12 @@ const unitSchema = require("./Unit");
 const armySchema = new Schema({
   faction: {
     type: String,
+    required: true,
     trim: true,
   },
   detachment: {
     type: String,
+    required: true,
     trim: true,
   },
   detachmentRules: {
