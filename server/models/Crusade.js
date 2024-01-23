@@ -19,12 +19,12 @@ const crusadeSchema = new Schema({
         ref: "User",
       },
       userArmy: {
-        type: String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: "Army",
       },
       userPoints: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
+        type: Number,
+        default: 0,
       },
     },
   ],

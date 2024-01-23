@@ -16,9 +16,6 @@ const armySchema = new Schema({
     type: String,
     trim: true,
   },
-  victoryPoints: {
-    type: Number,
-  },
   units: [unitSchema],
 });
 
