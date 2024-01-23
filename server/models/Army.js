@@ -5,17 +5,36 @@ const armySchema = new Schema({
   faction: {
     type: String,
     required: true,
-    trim: true,
+  },
+  factionRules: {
+    type: String,
   },
   detachment: {
     type: String,
     required: true,
-    trim: true,
   },
   detachmentRules: {
     type: String,
-    trim: true,
   },
+  strategems: [
+    {
+      stratName: {
+        type: String,
+        required: true,
+      },
+      stratCost: {
+        type: Number,
+        required: true,
+        default: 0,
+      },
+      stratText: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 250,
+      },
+    },
+  ],
   units: [unitSchema],
 });
 
