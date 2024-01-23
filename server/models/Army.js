@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const unitSchema = require("./Unit");
+const unitSchema = require("./subdocs/Unit");
 
 const armySchema = new Schema({
   faction: {

@@ -6,13 +6,24 @@ const userSchema = new Schema({
     type: String,
     unique: true,
     required: true,
-    trim: true,
   },
   password: {
     type: String,
     required: true,
     minlength: 8,
   },
+  armies: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Army",
+    },
+  ],
+  crusades: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Crusade",
+    },
+  ],
 });
 
 userSchema.pre("save", async function (next) {

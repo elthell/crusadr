@@ -1,5 +1,5 @@
 const { Schema, Types } = require("mongoose");
-const battleSchema = require("./Battle");
+const battleSchema = require("./subdocs/Battle");
 
 const crusadeSchema = new Schema({
   setting: {
