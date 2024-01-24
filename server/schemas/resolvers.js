@@ -9,10 +9,17 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    // user -- populate armies + crusades
+    // army -- from user -- populate units (sort function?)
+    // armies -- from user
+    // crusade -- populate users + armies + battles
+    // crusade -- from user -- populate battles (sort function?)
+    // crusades -- from user
   },
+
   Mutation: {
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
+    addUser: async (parent, { username, password }) => {
+      const user = await User.create({ username, password });
       const token = signToken(user);
       return { token, user };
     },
@@ -33,6 +40,15 @@ const resolvers = {
 
       return { token, user };
     },
+    // add Army
+    // update Army
+    // delete Army
+    // add Crusade -- invite process for users?
+    // update Crusade
+    // add Battle
+    // add Unit
+    // update Unit
+    // delete Unit
   },
 };
 
