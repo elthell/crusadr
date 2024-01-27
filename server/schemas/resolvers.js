@@ -1,4 +1,4 @@
-const { Army, Crusade, User } = require("../models");
+const { Army, User } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
