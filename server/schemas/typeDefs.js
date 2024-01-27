@@ -1,18 +1,32 @@
 const typeDefs = `
-type Army {}
+type User {
+  _id: ID!
+  username: String!
+  password: String!
+  armies: [Army]
+}
 
-type Crusade {}
-
-type User {}
+type Army {
+  _id: ID!
+  faction: String!
+  factionRules: String!
+  detachment: String!
+  detachmentRules: String!
+}
 
 type Auth {
   token: ID!
   user: User
 }
 
-type Query {}
+type Query {
+  me: User
+}
 
-type Mutation {}
+type Mutation {
+  addUser(username: String!, email: String!, password: String!): Auth
+  login(email:String!, password: String!):Auth
+},
 `;
 
 module.exports = typeDefs;

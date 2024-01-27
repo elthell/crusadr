@@ -18,12 +18,12 @@ const userSchema = new Schema({
       ref: "Army",
     },
   ],
-  crusades: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Crusade",
-    },
-  ],
+  // crusades: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Crusade",
+  //   },
+  // ],
 });
 
 userSchema.pre("save", async function (next) {
